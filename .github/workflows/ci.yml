@@ -24,3 +24,6 @@ jobs:
 
       - name: Run tests (PHPUnit)
         run: vendor/bin/phpunit
+
+      - name: Run static type checks (PHPStan)
+        run: vendor/bin/phpstan analyse src/ tests/

@@ -173,5 +173,18 @@ Ensure all tests pass successfully.
 
 ---
 
+## 10. Run PHPStan check
+
+```bash
+composer require --dev phpstan/phpstan
+composer require --dev phpstan/phpstan-doctrine
+composer require --dev phpstan/phpstan-symfony
+vendor/bin/phpstan analyse src --level=max
+```
+
+if you encounter issues, you may need to fix them, ignore them on /phpstan.dist.neon config , or lower the level.
+
+---
+
 Your Symfony setup on WSL2 is now complete, including GitHub management and
 automated testing with GitHub Actions.
