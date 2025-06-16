@@ -27,3 +27,6 @@ jobs:
 
       - name: Run static type checks (PHPStan)
         run: vendor/bin/phpstan analyse src/ tests/
+
+      - name: Run code style latest (Rector)
+        run: vendor/bin/rector process src --dry-run
