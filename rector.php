@@ -3,23 +3,23 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
+use Rector\Doctrine\Set\DoctrineSetList;
+use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Set\ValueObject\LevelSetList;
 use Rector\Set\ValueObject\SetList;
 use Rector\Symfony\Set\SymfonySetList;
-use Rector\Doctrine\Set\DoctrineSetList;
-use Rector\PHPUnit\Set\PHPUnitSetList;
 
 return RectorConfig::configure()
     // Define paths to be analyzed by Rector
     ->withPaths([
-        __DIR__ . '/src',
-        __DIR__ . '/tests',
+        __DIR__.'/src',
+        __DIR__.'/tests',
     ])
 
     // For Symfony projects, load the container XML to enable smarter refactoring based on service definitions.
     // Adjust the path according to your Symfony version and environment.
     // Typically, it's located at var/cache/{env}/App_Kernel{Env}DebugContainer.xml
-    ->withSymfonyContainerXml(__DIR__ . '/var/cache/dev/App_KernelDevDebugContainer.xml')
+    ->withSymfonyContainerXml(__DIR__.'/var/cache/dev/App_KernelDevDebugContainer.xml')
 
     // Apply framework-specific rules based on Composer dependencies.
     // This enables automatic refactoring for frameworks like Symfony, Doctrine, etc., including version upgrades.

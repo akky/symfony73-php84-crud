@@ -2,7 +2,7 @@
 
 use App\Kernel;
 
-require_once dirname(__DIR__) . '/vendor/autoload_runtime.php';
+require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
 
 $environment = $_SERVER['APP_ENV'] ?? 'dev';
 if (!is_string($environment)) {
