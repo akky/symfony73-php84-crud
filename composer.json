@@ -85,7 +85,22 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "test": [
+            "SYMFONY_DEPRECATIONS_HELPER=weak bin/phpunit"
+        ],
+        "test-coverage": "php -d xdebug.mode=coverage vendor/bin/phpunit tests/ --coverage-html var/coverage/ --coverage-filter src",
+        "app:code-quality": [
+            "bin/console lint:yaml config --parse-tags",
+            "bin/console lint:twig templates",
+            "bin/console lint:container",
+            "./vendor/bin/phpstan analyse --memory-limit=-1",
+            "./vendor/bin/rector --dry-run"
+        ],
+        "security-check": [
+            "symfony check:security"
+        ],
+        "phpstan": "vendor/bin/phpstan"
     },
     "conflict": {
         "symfony/symfony": "*"
